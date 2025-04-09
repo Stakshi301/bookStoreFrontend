@@ -26,7 +26,7 @@ const Books = () => {
     
           if (userId && token) {
             const likedRes = await axios.get(
-              `http://localhost:5000/sign-login/${userId}/likes`,
+              `https://bookstorefrontend-f3gf.onrender.com/sign-login/${userId}/likes`,
               {
                 headers: { Authorization: `Bearer ${token}` },
               }
@@ -79,7 +79,7 @@ const handleLike = async (bookId) => {
 
   try {
     await axios.post(
-      `http://localhost:5000/sign-login/like`,
+      `https://bookstorefrontend-f3gf.onrender.com/sign-login/like`,
       { userId, bookId },
       {
         headers: {

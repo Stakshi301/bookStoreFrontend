@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API =axios.create({baseURL: "http://localhost:5000"});
+const API =axios.create({baseURL: "https://bookstorefrontend-f3gf.onrender.com"});
 
 export const getBooks=()=>API.get('/book/getBook');
 export const postBook=(bookData)=>API.post('/book/postBook',bookData);

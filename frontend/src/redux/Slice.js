@@ -3,24 +3,24 @@ import axios from 'axios';
 
 // Async Thunks
 export const fetchBooks = createAsyncThunk('books/fetchBooks', async () => {
-    const response = await axios.get('http://localhost:5000/book/getBook');
+    const response = await axios.get('https://bookstorefrontend-f3gf.onrender.com/book/getBook');
     return response.data;
   });
   
   export const addBookk = createAsyncThunk('books/addBook', async (book) => {
-    const response = await axios.post('http://localhost:5000/book/postBook', book);
+    const response = await axios.post('https://bookstorefrontend-f3gf.onrender.com/book/postBook', book);
     return response.data;
   });
   
     // DELETE BOOK
 export const deleteBookk = createAsyncThunk('books/deleteBook', async (id) => {
-    await axios.delete(`http://localhost:5000/book/deleteBook/${id}`);
+    await axios.delete(`https://bookstorefrontend-f3gf.onrender.com/book/deleteBook/${id}`);
     return id; // just return the id so we can remove it from the state
   });
   
   // UPDATE BOOK
   export const updateBookk = createAsyncThunk('books/updateBook', async ({ id, updatedBook }) => {
-    const response = await axios.put(`http://localhost:5000/book/putBook/${id}`, updatedBook);
+    const response = await axios.put(`https://bookstorefrontend-f3gf.onrender.com/book/putBook/${id}`, updatedBook);
     return response.data; // assuming updated book object is returned
   });
     
